@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+
+  dubbo:
+    application:
+      name: dubbo-provider
+      id: dubbo-provider
+  #注册中心地址
+    registry:
+      address: zookeeper://127.0.0.1:2181
+  #配置了这个后，就会一直有守护京城，而不是启动就怪盗了
+    server:  true
+  #扫描的包
+    scan: com.qging.bubbo.provider.service
+  # Dubbo Protocol
+    protocol:
+      name: dubbo
+      port: 20880
